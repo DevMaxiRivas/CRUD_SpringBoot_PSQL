@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: my-crud
+
+# Definimos los parametros para operar con jdbc
+datasource:
+  #Definimos las conexiones que vamos a permitir
+  my-connection:
+    jdbc-url: jdbc:postgresql://localhost:5432/book_systems
+    username: walrus
+    password: 12345
+    # maximo de conexiones simultaneas
+    maximu-pool-size: 10
+    pool-name: "crud-pool"
+    # dependiendo las transacciones podemos alternar entre true o false
+    auto-commit: true
+
+# Podemos definir tambien otras conexiones como por ejemplo si tenemos un usuario solo con
+# permisos de lectura seria copiar desde my_connection hacia abajo, cambiando el nombre
+# my_connection -> my_connection2
